@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Animaj</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <aside id="controls">
+      <select id="select">
+        <option value="brush">Brush</option>
+        <option value="erase">Erase</option>
+      </select>
+      <input type="number" id="framerate" value="20">
+      <input type="color" id="brushcolor">
+    </aside>
+    <div id="container"></div>
+    <div id="frames">
+      <div class="frame"> 
+        <button id="addframe">+</button>
+      </div>
+    </div>
+    <label for="play_check" id="play"><span>Play</span>
+      <input type="checkbox" id="play_check"/>
+    </label>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
