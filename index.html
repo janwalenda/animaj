@@ -1,30 +1,65 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="./src/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animaj</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/style.scss">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animaj</title>
   </head>
-  <body>
-    <aside id="controls">
-      <select id="select">
-        <option value="brush">Brush</option>
-        <option value="erase">Erase</option>
-      </select>
-      <input type="number" id="framerate" value="20">
-      <input type="color" id="brushcolor">
-    </aside>
-    <div id="container"></div>
-    <div id="frames">
-      <div class="frame"> 
-        <button id="addframe">+</button>
-      </div>
+
+<body>
+  <div id="controls">
+    <div id="brush_control">
+      <label for="brush">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+          <path
+            d="M339.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L568.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S517.7-4.4 499.1 9.6L262.4 187.2c-24 18-38.2 46.1-38.4 76.1L339.3 367.1zm-19.6 25.4l-116-104.4C143.9 290.3 96 339.6 96 400c0 3.9 .2 7.8 .6 11.6C98.4 429.1 86.4 448 68.8 448L64 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z" />
+        </svg>
+        <input type="radio" name="brushMode" id="brush" checked>
+      </label>
+      <label for="erase">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+          <path
+            d="M290.7 57.4L57.4 290.7c-25 25-25 65.5 0 90.5l80 80c12 12 28.3 18.7 45.3 18.7L288 480l9.4 0L512 480c17.7 0 32-14.3 32-32s-14.3-32-32-32l-124.1 0L518.6 285.3c25-25 25-65.5 0-90.5L381.3 57.4c-25-25-65.5-25-90.5 0zM297.4 416l-9.4 0-105.4 0-80-80L227.3 211.3 364.7 348.7 297.4 416z" />
+        </svg>
+        <input type="radio" name="brushMode" id="erase">
+      </label>
     </div>
-    <label for="play_check" id="play"><span>Play</span>
-      <input type="checkbox" id="play_check"/>
+    <span class="divider-vertical"></span>
+    <label>
+      <span>fps</span>
+      <input type="number" id="framerate" value="20">
     </label>
-    <script type="module" src="/src/main.ts"></script>
+    <span class="divider-vertical"></span>
+    <label>
+      <input type="color" id="brushcolor">
+    </label>
+    </div>
+    <div id="container"></div>
+  <div id="bottom_control">
+    <button id="addframe">+</button>
+    <div id="frames">
+
+    </div>
+    <label for="play_check">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="play">
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+        <path
+          d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="pause">
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
+        <path
+          d="M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z" />
+      </svg>
+      <input type="checkbox" id="play_check" />
+    </label>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
   </body>
+
 </html>
